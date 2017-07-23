@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import {
   StyleSheet,
   Text,
-  View
+  View,
+  TouchableOpacity,
 } from 'react-native';
 
 const styles = StyleSheet.create({
@@ -22,6 +23,14 @@ const styles = StyleSheet.create({
     color: '#333333',
     marginBottom: 5,
   },
+  openRadioButton: {
+    height: 50,
+    width: 120,
+    marginTop: 20,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#c6a0ff'
+  },
 });
 
 export default class ReactNativeRedux extends Component {
@@ -30,6 +39,11 @@ export default class ReactNativeRedux extends Component {
     headerBackTitle: 'Home'
   };
 
+  openChatScreen = () => {
+    const { navigate } = this.props.navigation;
+    navigate('Radio', { albumId: '123' });
+  }
+
   render() {
     return (
       <View style={styles.container}>
@@ -37,12 +51,15 @@ export default class ReactNativeRedux extends Component {
           Welcome to React Native!
         </Text>
         <Text style={styles.instructions}>
-          To get started, edit index.ios.js
+          To get started, edit src/index.js
         </Text>
         <Text style={styles.instructions}>
           Press Cmd+R to reload,{'\n'}
           Cmd+D or shake for dev menu
         </Text>
+        <TouchableOpacity style={styles.openRadioButton} onPress={this.openChatScreen}>
+          <Text>Open Chats</Text>
+        </TouchableOpacity>
       </View>
     );
   }
