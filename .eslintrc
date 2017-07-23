@@ -39,5 +39,8 @@
   "plugins": [
     "react",
     "react-native"
-  ]
+  ],
+  "globals": {
+    "__DEV__": false
+  }
 }
