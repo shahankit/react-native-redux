@@ -7,6 +7,9 @@ import thunk from 'redux-thunk';
 import AppReducer from './redux/reducers';
 import AppWithNavigationState from './navigation';
 
+// API middleware for fetching data
+import APIMiddleware from './lib/apiMiddleware';
+
 console.disableYellowBox = true;
 
 const loggerMiddleware = createLogger({ predicate: () => __DEV__, collapsed: true });
@@ -15,6 +18,7 @@ function configureStore(initialState = {}) {
   const enhancer = compose(
     applyMiddleware(
       thunk, // lets us dispatch() functions
+      APIMiddleware,
       loggerMiddleware
     ),
   );
