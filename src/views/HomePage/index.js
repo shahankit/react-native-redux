@@ -39,7 +39,7 @@ export default class ReactNativeRedux extends Component {
     headerBackTitle: 'Home'
   };
 
-  openChatScreen = () => {
+  openRadioScreen = () => {
     const { navigate } = this.props.navigation;
     navigate('Radio', { albumId: '123' });
   }
@@ -57,8 +57,8 @@ export default class ReactNativeRedux extends Component {
           Press Cmd+R to reload,{'\n'}
           Cmd+D or shake for dev menu
         </Text>
-        <TouchableOpacity style={styles.openRadioButton} onPress={this.openChatScreen}>
-          <Text>Open Chats</Text>
+        <TouchableOpacity style={styles.openRadioButton} onPress={this.openRadioScreen}>
+          <Text>Open Radio</Text>
         </TouchableOpacity>
       </View>
     );
